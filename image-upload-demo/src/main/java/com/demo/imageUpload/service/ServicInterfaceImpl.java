@@ -38,7 +38,7 @@ private ImageDetailsRepository imageDetailsRepo;
 	}
 
 	@Override
-	public String uplaoadImage(MultipartFile file) throws IOException {
+	public String uploadImage(MultipartFile file) throws IOException {
 			 if (file.isEmpty()) {
 	                throw new FileNotFoundException("File is empty.");
 	            }
