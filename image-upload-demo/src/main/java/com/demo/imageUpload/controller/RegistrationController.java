@@ -20,7 +20,7 @@ public class RegistrationController {
 	@Autowired
 	private ServiceInterface serviceInterface;
 	@PostMapping("/save")
-	public ResponseEntity<Registration> saveUser(@RequestBody Registration registration)
+	public ResponseEntity<Registration> saveUser( @RequestBody Registration registration)
 	{
 		return new ResponseEntity<>(serviceInterface.saveUser(registration),HttpStatus.CREATED);
 	}

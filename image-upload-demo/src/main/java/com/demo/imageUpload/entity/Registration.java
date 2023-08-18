@@ -1,4 +1,5 @@
 package com.demo.imageUpload.entity;
+import jakarta.validation.constraints.NotBlank;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import jakarta.persistence.Column;
@@ -14,7 +15,9 @@ public class Registration {
 	private Long id;
 	@NotEmpty(message = "name is required")
 	private String name;
-	@NotEmpty(message = "Uname is required")
+@NotEmpty(message = "Uname is required")
+//check blank and not null
+
 	private String userName;
 	@NotEmpty(message = "password is required")
 	private String password;

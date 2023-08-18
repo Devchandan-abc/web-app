@@ -1,21 +1,17 @@
 package com.demo.imageUpload.service;
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
 import com.demo.imageUpload.entity.ImageDetails;
 import com.demo.imageUpload.entity.Registration;
 import com.demo.imageUpload.exception.FileNotFoundException;
 import com.demo.imageUpload.repository.ImageDetailsRepository;
 import com.demo.imageUpload.repository.RegistrationRepository;
 import com.demo.imageUpload.util.ImageUtil;
-
 import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
@@ -26,8 +22,8 @@ private RegistrationRepository registrationRepo;
 private ImageDetailsRepository imageDetailsRepo;
 	@Override
 	public Registration saveUser(Registration registration) {
-		if(registration.getName()==null||registration.getUserName()==null||registration.getPassword()==null)
-			throw new FileNotFoundException("Field should not be empty");
+//		if(registration.getName()==null||registration.getUserName()==null||registration.getPassword()==null)
+//		throw new FileNotFoundException("Field should not be empty");
 		Optional<Registration> findByUserName = registrationRepo.findByUserName(registration.getUserName());
 		if(findByUserName.isPresent())
 		{
