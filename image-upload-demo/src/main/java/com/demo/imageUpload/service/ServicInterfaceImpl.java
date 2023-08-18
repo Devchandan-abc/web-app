@@ -43,7 +43,7 @@ private ImageDetailsRepository imageDetailsRepo;
 	                throw new FileNotFoundException("File is empty.");
 	            }
 
-	            if (file.getSize() > 3 * 1024 * 1024) { // 3 MB
+	            if (file.getSize() > 3 * 1024 * 1024) {
 	                throw new FileNotFoundException("File size exceeds the limit.");
 	            }
 	            else
@@ -74,7 +74,10 @@ private ImageDetailsRepository imageDetailsRepo;
 		Optional<Registration> findByUserName = registrationRepo.findByUserName(registration.getUserName());
 		if(findByUserName.isPresent())
 		{
+			if(findByUserName.get().getPassword().equals(registration.getPassword()))
 			return imageDetailsRepo.findAll();
+			else
+				throw new FileNotFoundException("UserName or password is incorrect!!");
 		     
 		}
 		else
